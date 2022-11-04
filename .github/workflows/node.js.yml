@@ -3,7 +3,7 @@
 
 name: Node.js CI
 on:
-  workflow_dispatch:
+  repository_dispatch:
     inputs:
       service: 
         description: 'service name'     
