@@ -3,15 +3,11 @@
 
 name: Node.js CI
 
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+on: repository_dispatch
 
 jobs:
+  name: FTS e2e backend test automation
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
