@@ -41,4 +41,5 @@ jobs:
         build_dir: ./results
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: echo 'Visit https://grzegorzspiewak.github.io/MochaTestRunner' to check results details
 
