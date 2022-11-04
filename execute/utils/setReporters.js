@@ -7,7 +7,7 @@ module.exports = ({ trProjectName, report }) => {
     return {
       reporter: 'mochawesome',
       reporterOptions: {
-        reportFilename: 'report',
+        reportFilename: 'index',
         reportDir: 'results',
         json: false,
       },
