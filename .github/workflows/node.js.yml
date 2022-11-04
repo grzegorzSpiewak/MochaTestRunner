@@ -24,11 +24,19 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-v${{ matrix.node }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-v${{ matrix.node }}-
+        path: ~/.npm
+        key: ${{ runner.os }}-node-v${{ matrix.node }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+         ${{ runner.os }}-node-v${{ matrix.node }}-
+
     - name: Install Dependencies
       run: npm install
+
     - name: Run All Node.js Tests
       run: npm run test --env=qa --service=fts-service-1 -report
+
+    - name: Deploy report page 
+      uses: crazy-max/ghaction-github-pages@v3
+      with:
+        publish_dir: ./results
+
