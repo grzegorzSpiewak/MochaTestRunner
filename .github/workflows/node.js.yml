@@ -51,6 +51,6 @@ jobs:
       with: 
         path: './results/results.xml'
         name: 'Test results'
-        reporter: 'mocha-json'
+        reporter: 'jest-junit'
         list-suites: 'all'
 

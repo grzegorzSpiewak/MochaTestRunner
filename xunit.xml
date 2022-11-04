@@ -1,0 +1,19 @@
+<testsuite name="Mocha Tests" tests="8" failures="0" errors="1" skipped="2" timestamp="Fri, 04 Nov 2022 18:52:22 GMT" time="0.333">
+<testcase classname="Test 1 service 1" name="test 1" time="0.001"/>
+<testcase classname="Test 1 service 1" name="test 3" time="0"/>
+<testcase classname="Test 1 service 1" name="test 4" time="0.001"/>
+<testcase classname="Test 1 service 1" name="test 5 skipped" time="0"><skipped/></testcase>
+<testcase classname="Test 2 service 1" name="test 2" time="0.001"/>
+<testcase classname="Test 2 service 1 with nested describe" name="nested test 2 -skip" time="0"><skipped/></testcase>
+<testcase classname="Test 2 service 1 with nested describe" name="nested test 2" time="0"/>
+<testcase classname="Test 2 service 1 with nested describe" name="nested test 2" time="0.001"><failure>expected 1 to deeply equal 2
+
+      + expected - actual
+
+      -1
+      +2
+      
+AssertionError: expected 1 to deeply equal 2
+    at Context.&#x3C;anonymous&#x3E; (mocha-tests/fts-service-1/test-2.js:20:23)
+    at processImmediate (node:internal/timers:466:21)</failure></testcase>
+</testsuite>
