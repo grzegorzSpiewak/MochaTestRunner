@@ -50,4 +50,6 @@ jobs:
       uses: dorny/test-reporter@v1
       with: 
         path: './results/results.xml'
+        name: 'Test results'
+        list-suites: 'all'
 
