@@ -1,0 +1,169 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 8,
+    "passes": 5,
+    "pending": 2,
+    "failures": 1,
+    "start": "2022-11-04T21:04:29.382Z",
+    "end": "2022-11-04T21:04:29.704Z",
+    "duration": 322
+  },
+  "tests": [
+    {
+      "title": "test 1",
+      "fullTitle": "Test 1 service 1 test 1",
+      "file": "mocha-tests/fts-service-1/test-1.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "test 3",
+      "fullTitle": "Test 1 service 1 test 3",
+      "file": "mocha-tests/fts-service-1/test-1.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "test 4",
+      "fullTitle": "Test 1 service 1 test 4",
+      "file": "mocha-tests/fts-service-1/test-1.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "test 5 skipped",
+      "fullTitle": "Test 1 service 1 test 5 skipped",
+      "file": "mocha-tests/fts-service-1/test-1.js",
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "test 2",
+      "fullTitle": "Test 2 service 1 test 2",
+      "file": "mocha-tests/fts-service-1/test-2.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "nested test 2 -skip",
+      "fullTitle": "Test 2 service 1 with nested describe nested test 2 -skip",
+      "file": "mocha-tests/fts-service-1/test-2.js",
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "nested test 2",
+      "fullTitle": "Test 2 service 1 with nested describe nested test 2",
+      "file": "mocha-tests/fts-service-1/test-2.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "nested test 2",
+      "fullTitle": "Test 2 service 1 with nested describe nested test 2",
+      "file": "mocha-tests/fts-service-1/test-2.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {
+        "stack": "AssertionError: expected 1 to deeply equal 2\n    at Context.<anonymous> (mocha-tests/fts-service-1/test-2.js:20:23)\n    at processImmediate (node:internal/timers:466:21)",
+        "message": "expected 1 to deeply equal 2",
+        "showDiff": true,
+        "actual": "1",
+        "expected": "2",
+        "operator": "strictEqual"
+      }
+    }
+  ],
+  "pending": [
+    {
+      "title": "test 5 skipped",
+      "fullTitle": "Test 1 service 1 test 5 skipped",
+      "file": "mocha-tests/fts-service-1/test-1.js",
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "nested test 2 -skip",
+      "fullTitle": "Test 2 service 1 with nested describe nested test 2 -skip",
+      "file": "mocha-tests/fts-service-1/test-2.js",
+      "currentRetry": 0,
+      "err": {}
+    }
+  ],
+  "failures": [
+    {
+      "title": "nested test 2",
+      "fullTitle": "Test 2 service 1 with nested describe nested test 2",
+      "file": "mocha-tests/fts-service-1/test-2.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected 1 to deeply equal 2",
+        "showDiff": true,
+        "actual": "1",
+        "expected": "2",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected 1 to deeply equal 2\n    at Context.<anonymous> (mocha-tests/fts-service-1/test-2.js:20:23)\n    at processImmediate (node:internal/timers:466:21)",
+        "__type": "Error"
+      }
+    }
+  ],
+  "passes": [
+    {
+      "title": "test 1",
+      "fullTitle": "Test 1 service 1 test 1",
+      "file": "mocha-tests/fts-service-1/test-1.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "test 3",
+      "fullTitle": "Test 1 service 1 test 3",
+      "file": "mocha-tests/fts-service-1/test-1.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "test 4",
+      "fullTitle": "Test 1 service 1 test 4",
+      "file": "mocha-tests/fts-service-1/test-1.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "test 2",
+      "fullTitle": "Test 2 service 1 test 2",
+      "file": "mocha-tests/fts-service-1/test-2.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "nested test 2",
+      "fullTitle": "Test 2 service 1 with nested describe nested test 2",
+      "file": "mocha-tests/fts-service-1/test-2.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    }
+  ]
+}

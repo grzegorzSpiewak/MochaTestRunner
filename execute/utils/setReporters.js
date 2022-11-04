@@ -7,7 +7,7 @@ module.exports = ({ trProjectName, report }) => {
     return {
       reporter: 'mocha-multi-reporters',
       reporterOptions: {
-        reporterEnabled: 'mochawesome, json',
+        reporterEnabled: 'mochawesome',
         mochawesomeReporterOptions: {
           reportFilename: 'index',
           reportDir: 'results',
