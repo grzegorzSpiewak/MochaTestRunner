@@ -38,5 +38,5 @@ jobs:
     - name: Deploy report page 
       uses: crazy-max/ghaction-github-pages@v3
       with:
-        publish_dir: ./results
+        build_dir: ./results
 
