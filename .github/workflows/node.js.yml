@@ -6,7 +6,6 @@ name: Node.js CI
 on: repository_dispatch
 
 jobs:
-  name: FTS e2e backend test automation
   build:
     runs-on: ubuntu-latest
 
