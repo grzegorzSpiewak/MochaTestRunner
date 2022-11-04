@@ -7,14 +7,6 @@ describe('Test 1 service 1', async function () {
     expect(1).to.be.eql(1);
   });
 
-  it('test 3', function () {
-    expect(1).to.be.eql(1);
-  });
-
-  it('test 4', function () {
-    expect(1).to.be.eql(1);
-  });
-
   it.skip('test 5 skipped', function () {
     expect(1).to.be.eql(1);
   });

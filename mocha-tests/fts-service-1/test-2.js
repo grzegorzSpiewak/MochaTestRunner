@@ -8,16 +8,12 @@ describe('Test 2 service 1', async function () {
   });
 
   describe('with nested describe', function () {
-    it.skip('nested test 2 -skip', function () {
+    it('nested test 2 -skip', function () {
       expect(1).to.be.eql(1);
     });
 
     it('nested test 2', function () {
       expect(1).to.be.eql(1);
-    });
-
-    it('nested test 2', function () {
-      expect(1).to.be.eql(2);
     });
   });
 });
