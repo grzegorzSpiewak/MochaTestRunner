@@ -43,7 +43,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Check results
+    - name: Check results https://grzegorzspiewak.github.io/MochaTestRunner
       run: echo "Visit https://grzegorzspiewak.github.io/MochaTestRunner to check results details"
     
     # - name: Publish test results
