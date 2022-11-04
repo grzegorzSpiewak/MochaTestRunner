@@ -30,7 +30,7 @@ jobs:
          ${{ runner.os }}-node-v${{ matrix.node }}-
 
     - run: |
-        echo "version: ${{ github.event.inputs.version }}"
+        echo "version: ${{ github.event.client_payload.service }}"
 
     - name: Install Dependencies
       run: npm install
