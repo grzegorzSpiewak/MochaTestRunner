@@ -53,4 +53,5 @@ jobs:
         name: 'Test results'
         reporter: 'mocha-json'
         list-suites: 'all'
+        fail-on-error: false
 
