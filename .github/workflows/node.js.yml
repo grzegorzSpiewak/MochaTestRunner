@@ -29,14 +29,11 @@ jobs:
         restore-keys: |
          ${{ runner.os }}-node-v${{ matrix.node }}-
 
-    - run: |
-        echo "version: ${{ github.event.client_payload.service }}"
-
     - name: Install Dependencies
       run: npm install
 
     - name: Run All Node.js Tests
-      run: npm run test --env=qa --service=fts-service-1 -report
+      run: npm run test --env=qa --service=${{ github.event.client_payload.service }} -report
 
     - name: Deploy report page 
       uses: crazy-max/ghaction-github-pages@v3
