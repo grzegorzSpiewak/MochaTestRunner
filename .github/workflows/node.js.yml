@@ -32,7 +32,7 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
-    - name: Run All Node.js Tests
+    - name: Run e2e test for ${{ github.event.client_payload.service }} service
       run: npm run test --env=qa --service=${{ github.event.client_payload.service }} -report
 
     - name: Deploy report page 
