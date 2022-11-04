@@ -31,4 +31,4 @@ jobs:
     - name: Install Dependencies
       run: npm install
     - name: Run All Node.js Tests
-      run: npm run test --env=qa --service=fts-service-1
+      run: npm run test --env=qa --service=fts-service-1 -report

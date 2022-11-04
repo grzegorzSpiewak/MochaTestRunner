@@ -7,7 +7,9 @@ module.exports = ({ trProjectName, report }) => {
     return {
       reporter: 'mochawesome',
       reporterOptions: {
-        reportFilename: 'result-mochawesome',
+        reportFilename: 'report',
+        reportDir: 'results',
+        json: false,
       },
     };
   };
@@ -18,7 +20,7 @@ module.exports = ({ trProjectName, report }) => {
       reporterOptions: {
         reporterEnabled: 'mochawesome, ./execute/testRailReporter',
         mochawesomeReporterOptions: {
-          reportFilename: 'result-mochawesome',
+          reportFilename: 'results/report',
         },
       },
     };

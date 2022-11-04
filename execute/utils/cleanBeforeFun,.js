@@ -1,9 +1,10 @@
 const { rmSync, existsSync } = require('fs');
 
 const pathsToRemove = [
-  './mochawesome-report',
+  './results',
 ];
 
 module.exports = () => {
+  console.log('remove');
   pathsToRemove.forEach(path => existsSync(path) ? rmSync(path, { recursive: true }) : null);
 };
