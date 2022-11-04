@@ -5,15 +5,18 @@ module.exports = ({ trProjectName, report }) => {
 
   if (report && isEmpty(trProjectName)) {
     return {
-      reporter: 'mocha-multi-reporters',
+      reporter: 'json',
       reporterOptions: {
-        reporterEnabled: 'mochawesome',
-        mochawesomeReporterOptions: {
-          reportFilename: 'index',
-          reportDir: 'results',
-          json: true,
-        },
+        output: './results/testResults.json',
       },
+      // reporterOptions: {
+      //   reporterEnabled: 'mochawesome',
+      //   mochawesomeReporterOptions: {
+      //     reportFilename: 'index',
+      //     reportDir: 'results',
+      //     json: true,
+      //   },
+      // },
     };
   };
 
