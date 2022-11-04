@@ -11,6 +11,7 @@ const {
 } = require('./utils');
 
 cleanBeforeFun();
+console.log('test');
 
 const cmdOpts = getCmdOpts();
 
