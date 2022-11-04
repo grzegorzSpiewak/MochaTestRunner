@@ -45,4 +45,9 @@ jobs:
 
     - name: Check results
       run: echo "Visit https://grzegorzspiewak.github.io/MochaTestRunner to check results details"
+    
+    - name: Publish test results
+      uses: dorny/test-reporter@v1
+      with: 
+        path: './results/results.xml'
 

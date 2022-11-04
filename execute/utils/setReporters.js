@@ -5,11 +5,17 @@ module.exports = ({ trProjectName, report }) => {
 
   if (report && isEmpty(trProjectName)) {
     return {
-      reporter: 'mochawesome',
+      reporter: 'mocha-multi-reporters',
       reporterOptions: {
-        reportFilename: 'index',
-        reportDir: 'results',
-        json: false,
+        reporterEnabled: 'mochawesome, xunit',
+        mochawesomeReporterOptions: {
+          reportFilename: 'index',
+          reportDir: 'results',
+          json: false,
+        },
+        xunitReporterOptions: {
+          output: 'results/results.xml',
+        },
       },
     };
   };
@@ -20,7 +26,9 @@ module.exports = ({ trProjectName, report }) => {
       reporterOptions: {
         reporterEnabled: 'mochawesome, ./execute/testRailReporter',
         mochawesomeReporterOptions: {
-          reportFilename: 'results/report',
+          reportFilename: 'index',
+          reportDir: 'results',
+          json: false,
         },
       },
     };

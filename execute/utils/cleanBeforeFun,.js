@@ -5,6 +5,5 @@ const pathsToRemove = [
 ];
 
 module.exports = () => {
-  console.log('remove');
   pathsToRemove.forEach(path => existsSync(path) ? rmSync(path, { recursive: true }) : null);
 };
