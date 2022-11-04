@@ -1,0 +1,50 @@
+{
+  "env": {
+      "commonjs": true,
+      "es2021": true,
+      "mocha": true,
+      "node": true
+  },
+  "extends": "standard",
+  "overrides": [],
+  "parserOptions": {
+      "ecmaVersion": "latest"
+  },
+  "rules": {
+      "semi": [2, "always"],
+      "no-console": "warn",
+      "space-before-function-paren": ["error", "always"],
+      "eol-last": 1,
+      "no-trailing-spaces": [2, {
+          "skipBlankLines": true
+      }],
+      "no-await-in-loop": 0,
+      "no-param-reassign": 0,
+      "func-names": 0,
+      "no-shadow": [2, {
+          "allow": ["err", "done", "user", "data", "options"]
+      }],
+      "new-cap": [2, {
+          "capIsNewExceptions": ["Router", "Promise"]
+      }],
+      "no-else-return": 0,
+      "no-underscore-dangle": 0,
+      "strict": [0, "global"],
+      "global-require": 0,
+      "max-len": [2, {
+          "ignoreComments": true,
+          "code": 500
+      }],
+      "valid-jsdoc": "error",
+      "arrow-parens": 0,
+      "import/no-extraneous-dependencies": ["off"],
+      "import/extensions": 0,
+      "comma-dangle": ["warn", {
+          "arrays": "always-multiline",
+          "objects": "always-multiline",
+          "imports": "always-multiline",
+          "exports": "always-multiline",
+          "functions": "ignore"
+      }]
+  }
+}
