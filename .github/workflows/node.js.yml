@@ -35,13 +35,13 @@ jobs:
     - name: Run e2e test for ${{ github.event.client_payload.service }} service
       run: npm run test --env=qa --service=${{ github.event.client_payload.service }} -report
 
-    - name: Deploy report page 
-      uses: crazy-max/ghaction-github-pages@v3
-      with:
-        build_dir: ./results
-        commit_message: Check results https://grzegorzspiewak.github.io/MochaTestRunner
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    # - name: Deploy report page 
+    #   uses: crazy-max/ghaction-github-pages@v3
+    #   with:
+    #     build_dir: ./results
+    #     commit_message: Check results https://grzegorzspiewak.github.io/MochaTestRunner
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Check results
       run: echo "Visit https://grzegorzspiewak.github.io/MochaTestRunner to check results details"
@@ -49,8 +49,8 @@ jobs:
     - name: Publish test results
       uses: dorny/test-reporter@v1
       with: 
-        path: './results/results.xml'
+        path: './results/results.json'
         name: 'Test results'
-        reporter: 'jest-junit'
+        reporter: 'mocha-json'
         list-suites: 'all'
 
