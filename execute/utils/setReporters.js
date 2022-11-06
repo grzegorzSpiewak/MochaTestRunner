@@ -1,23 +1,23 @@
 const { isEmpty } = require('lodash');
 
-module.exports = ({ trProjectName, report, service }) => {
+module.exports = ({ trProjectName, report }) => {
   if (!report) return {};
 
   if (report && isEmpty(trProjectName)) {
     return {
-      // reporter: 'json',
-      // reporterOptions: {
-      //   output: './results/testResults.json',
-      // },
-      reporter: 'mocha-multi-reporters',
+      reporter: 'json',
       reporterOptions: {
-        reporterEnabled: 'mochawesome',
-        mochawesomeReporterOptions: {
-          reportFilename: 'index',
-          reportDir: `results/${service}`,
-          json: false,
-        },
+        output: './results/testResults.json',
       },
+      // reporter: 'mocha-multi-reporters',
+      // reporterOptions: {
+      //   reporterEnabled: 'mochawesome',
+      //   mochawesomeReporterOptions: {
+      //     reportFilename: 'index',
+      //     reportDir: 'results',
+      //     json: false,
+      //   },
+      // },
     };
   };
 
