@@ -1,7 +1,7 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: Node.js CI
+name: Test automation for FTS services
 on:
   repository_dispatch:
     inputs:
@@ -35,23 +35,23 @@ jobs:
     - name: Run e2e test for ${{ github.event.client_payload.service }} service
       run: npm run test --env=qa --service=${{ github.event.client_payload.service }} -report
 
-    # - name: Deploy report page 
-    #   uses: crazy-max/ghaction-github-pages@v3
-    #   with:
-    #     build_dir: ./results
-    #     commit_message: Check results https://grzegorzspiewak.github.io/MochaTestRunner
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Deploy report page 
+      uses: crazy-max/ghaction-github-pages@v3
+      with:
+        build_dir: ./results/${{ github.event.client_payload.service }}
+        commit_message: Check results https://grzegorzspiewak.github.io/MochaTestRunner
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    # - name: Check results https://grzegorzspiewak.github.io/MochaTestRunner
-    #   run: echo "Visit https://grzegorzspiewak.github.io/MochaTestRunner to check results details"
+    - name: Check results https://grzegorzspiewak.github.io/MochaTestRunner-${{ github.event.client_payload.service }}
+      run: echo "Visit https://grzegorzspiewak.github.io/MochaTestRunner-${{ github.event.client_payload.service }} to check results details"
     
-    - name: Publish test results
-      uses: dorny/test-reporter@v1
-      with: 
-        path: './results/testResults.json'
-        name: 'Test results'
-        reporter: 'mocha-json'
-        list-suites: 'all'
-        fail-on-error: false
+    # - name: Publish test results
+    #   uses: dorny/test-reporter@v1
+    #   with: 
+    #     path: './results/testResults.json'
+    #     name: 'Test results'
+    #     reporter: 'mocha-json'
+    #     list-suites: 'all'
+    #     fail-on-error: false
 
