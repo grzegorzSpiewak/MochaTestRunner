@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "node ./execute",
-    "format": "eslint --fix '*/**/*.js'"
+    "format": "eslint --fix ."
   },
   "author": "",
   "license": "ISC",
@@ -32,6 +32,6 @@
     }
   },
   "lint-staged": {
-    "*.js": "eslint --fix '*/**/*.js'"
+    "*.js": "eslint --fix ."
   }
 }
