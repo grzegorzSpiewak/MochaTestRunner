@@ -12,7 +12,7 @@
   },
   "rules": {
       "semi": [2, "always"],
-      "no-console": "warn",
+      "no-console": "error",
       "space-before-function-paren": ["error", "always"],
       "eol-last": 1,
       "no-trailing-spaces": [2, {

@@ -36,7 +36,8 @@ const mapResponse = (resp) => {
     request: resp.request,
   };
 };
- 
+
+console.log('test');
 module.exports = (options) => {
   const baseURL = options.baseUrl || '';
   const headers = options.headers || {};
