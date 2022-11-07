@@ -1,5 +1,3 @@
-require('mochawesome/register');
-
 const config = require('../../config');
 const getCmdOpts = require('../getCmdOpts');
 

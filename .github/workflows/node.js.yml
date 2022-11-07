@@ -33,17 +33,7 @@ jobs:
       run: npm install
 
     - name: Run e2e test for ${{ github.event.client_payload.service }} service
-      run: npm run test --env=qa --service=${{ github.event.client_payload.service }} -report
-
-    # - name: Deploy report page 
-    #   uses: crazy-max/ghaction-github-pages@v3
-    #   with:
-    #     build_dir: ./results
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    # - name: Check results https://grzegorzspiewak.github.io/MochaTestRunner
-    #   run: echo "Visit https://grzegorzspiewak.github.io/MochaTestRunner to check results details"
+      run: npm run test --env=qa --service=${{ github.event.client_payload.service }} --report
     
     - name: Publish test results
       uses: dorny/test-reporter@v1
