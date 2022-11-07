@@ -1,37 +1,74 @@
 /* eslint-disable no-console */
 const mocha = require('mocha');
-
+const { getCmdOpts } = require('../../helpers');
+const {
+  prepareResults,
+  publishResultsToRun,
+  publishResultsToTestRail,
+} = require('./publishers');
 const {
   EVENT_RUN_END,
   EVENT_TEST_FAIL,
   EVENT_TEST_PASS,
-  EVENT_RUN_BEGIN,
   EVENT_TEST_PENDING,
 } = mocha.Runner.constants;
+const {
+  trProjectName,
+  trRunId,
+  service,
+} = getCmdOpts();
 
-module.exports = class TestRailReporter {
-  constructor (runner, options) {
+module.exports = class TestrailReporter {
+  constructor (runner) {
     mocha.reporters.Base.call(this, runner);
     this.runner = runner;
-
-    this.runner.on(EVENT_RUN_BEGIN, () => {
-      console.log('began');
-    });
+    this.data = [];
 
     this.runner.on(EVENT_TEST_PASS, (test) => {
-      console.log('pass');
+      const section = test.titlePath()[0];
+      const title = test.title;
+      this.data.push({
+        service,
+        section,
+        title,
+        pass: true,
+      });
     });
 
-    this.runner.on(EVENT_TEST_FAIL, (test) => {
-      console.log('fail');
+    this.runner.on(EVENT_TEST_FAIL, (test, err) => {
+      const section = test.titlePath()[0];
+      const title = test.title;
+      this.data.push({
+        service,
+        section,
+        title,
+        pass: false,
+        comment: err.message,
+      });
     });
 
     this.runner.on(EVENT_TEST_PENDING, (test) => {
-      console.log('pening');
+      const section = test.titlePath()[0];
+      const title = test.title;
+      this.data.push({
+        service,
+        section,
+        title,
+        pass: false,
+        skipped: true,
+      });
     });
 
     this.runner.on(EVENT_RUN_END, () => {
-      console.log('end');
+      const results = prepareResults(this.data, service);
+
+      if (trProjectName) {
+        if (trRunId) {
+          publishResultsToRun(results, trRunId);
+        } else {
+          publishResultsToTestRail(results, trProjectName);
+        }
+      }
     });
   }
 };

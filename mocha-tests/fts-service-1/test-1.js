@@ -2,12 +2,12 @@
 const { environment } = require('../../helpers');
 const { expect } = require('chai');
 
-describe('Test 1 service 1', async function () {
+describe('Section test 1 service A', async function () {
   it('test 1', function () {
     expect(1).to.be.eql(1);
   });
 
-  it.skip('test 5 skipped', function () {
+  it('tets 2', function () {
     expect(1).to.be.eql(1);
   });
 });

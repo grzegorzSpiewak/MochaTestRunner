@@ -9,15 +9,6 @@ module.exports = ({ trProjectName, report }) => {
       reporterOptions: {
         output: './results/testResults.json',
       },
-      // reporter: 'mocha-multi-reporters',
-      // reporterOptions: {
-      //   reporterEnabled: 'mochawesome',
-      //   mochawesomeReporterOptions: {
-      //     reportFilename: 'index',
-      //     reportDir: 'results',
-      //     json: false,
-      //   },
-      // },
     };
   };
 
@@ -25,7 +16,7 @@ module.exports = ({ trProjectName, report }) => {
     return {
       reporter: 'mocha-multi-reporters',
       reporterOptions: {
-        reporterEnabled: 'mochawesome, ./execute/testRailReporter',
+        reporterEnabled: 'spec, ./execute/testRailReporter',
         mochawesomeReporterOptions: {
           reportFilename: 'index',
           reportDir: 'results',
