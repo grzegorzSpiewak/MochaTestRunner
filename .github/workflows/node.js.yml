@@ -37,10 +37,10 @@ jobs:
     - name: Publish test results
       uses: phoenix-actions/test-reporting@v8
       if: success() || failure()
+      id: test-report
       with: 
         path: './results/data.json'
         name: '${{ github.event.client_payload.service }}/${{ github.event.client_payload.commit }} - test results'
-        id: test-report
         reporter: 'mocha-json'
         list-suites: 'all'
         fail-on-error: false
