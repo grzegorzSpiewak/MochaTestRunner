@@ -27,6 +27,9 @@ jobs:
         key: ${{ runner.os }}-node-v${{ matrix.node }}-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
          ${{ runner.os }}-node-v${{ matrix.node }}-
+      run: |
+        echo "::remove-matcher owner=eslint-compact::"
+        echo "::remove-matcher owner=eslint-stylish::"
 
     - name: Install Dependencies
       run: npm install
