@@ -10,11 +10,7 @@ describe('Section test 1 service B', async function () {
 
   describe('nested', function () {
     it('nested test', function () {
-      expect(1).to.be.eql(2);
-    });
-
-    it.skip('nested test', function () {
-      expect(1).to.be.eql(2);
+      expect(1).to.be.eql(1);
     });
   });
 });
