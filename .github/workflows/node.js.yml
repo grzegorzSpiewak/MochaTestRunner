@@ -35,8 +35,7 @@ jobs:
       run: npm run test --env=qa --service=${{ github.event.client_payload.service }} --report
     
     - name: Publish test results
-      uses: phoenix-actions/test-reporting@v8
-      id: test-report 
+      uses: dorny/test-reporter@v1
       if: success() || failure()
       with: 
         path: './results/data.json'
@@ -47,8 +46,4 @@ jobs:
     
     - name: Adding markdown
       run: echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
-    
-    - name: Visit "${{ steps.test-report.outputs.runHtmlUrl }}" to check results
-      run: |
-        echo "url is ${{ steps.test-report.outputs.runHtmlUrl }}"
 
