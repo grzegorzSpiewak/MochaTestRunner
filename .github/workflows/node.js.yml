@@ -36,10 +36,15 @@ jobs:
     
     - name: Publish test results
       uses: phoenix-actions/test-reporting@v8
+      if: success() || failure()
       with: 
-        path: './results/data.json'
-        name: 'Test results'
+        path: './results/*.json'
+        name: '${{ github.event.client_payload.service }} test results'
         reporter: 'mocha-json'
         list-suites: 'all'
         fail-on-error: false
+
+    - name: Test details
+        run: |
+          echo "url is ${{ steps.test-report.outputs.runHtmlUrl }}"
 
