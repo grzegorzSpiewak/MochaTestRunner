@@ -38,7 +38,7 @@ jobs:
     - name: Publish test results
       uses: dorny/test-reporter@v1
       with: 
-        path: './results/testResults.json'
+        path: './results/data.json'
         name: 'Test results'
         reporter: 'mocha-json'
         list-suites: 'all'

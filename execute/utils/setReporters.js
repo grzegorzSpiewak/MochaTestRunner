@@ -7,7 +7,7 @@ module.exports = ({ trProjectName, report }) => {
     return {
       reporter: 'json',
       reporterOptions: {
-        output: './results/testResults.json',
+        output: './results/data.json',
       },
     };
   };
