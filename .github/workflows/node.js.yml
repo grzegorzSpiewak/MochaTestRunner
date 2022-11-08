@@ -45,6 +45,7 @@ jobs:
         reporter: 'mocha-json'
         list-suites: 'all'
         list-tests: 'all'
+        max-annotations: '1'
 
     # - name: Save state
     #   run: |
