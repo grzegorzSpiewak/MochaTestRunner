@@ -49,6 +49,7 @@ jobs:
         list-tests: 'all'
     
     - name: Test results
+      if: success() || failure()
       run: |
         echo '### Test results' >> $GITHUB_STEP_SUMMARY
         echo '' >> $GITHUB_STEP_SUMMARY
