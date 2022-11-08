@@ -5,7 +5,7 @@ module.exports = ({ trProjectName, report }) => {
 
   if (report && isEmpty(trProjectName)) {
     return {
-      reporter: 'xunit',
+      reporter: 'json',
       reporterOptions: {
         output: './results/data.xml',
       },
