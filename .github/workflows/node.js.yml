@@ -35,17 +35,8 @@ jobs:
       run: npm run test --env=qa --service=${{ github.event.client_payload.service }} --report
     
     - name: Publish test results
-      uses: phoenix-actions/test-reporting@v8
-      id: test-report 
+      uses: EnricoMi/publish-unit-test-result-action/composite@v1
       if: success() || failure()
       with: 
-        path: './results/*.json'
-        name: '${{ github.event.client_payload.service }} test results'
-        reporter: 'mocha-json'
-        list-suites: 'all'
-        fail-on-error: false
-    
-    - name: Read output variables
-      run: |
-        echo "url is ${{ steps.test-report.outputs.runHtmlUrl }}"
+        files: './results/data.xml'
 
