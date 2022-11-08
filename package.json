@@ -22,11 +22,18 @@
     "lodash": "^4.17.21",
     "mocha": "^10.1.0",
     "mocha-multi-reporters": "^1.5.1",
-    "mochawesome": "^7.1.3",
     "ora": "^5.4.1",
     "stdio": "^2.1.1",
     "terminal-log": "^1.0.1",
     "testrail-api": "^1.3.6"
   },
-  "keywords": []
+  "keywords": [],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix ."
+  }
 }
