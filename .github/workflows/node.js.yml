@@ -56,4 +56,5 @@ jobs:
         echo 'github.run_id: ${{ github.run_id }}' >> $GITHUB_STEP_SUMMARY
         echo 'github.run_number: ${{ github.run_number }}' >> $GITHUB_STEP_SUMMARY
         echo 'github.sha: ${{ github.sha }}' >> $GITHUB_STEP_SUMMARY
+        echo 'github.html_url: ${{ html_url }}' >> $GITHUB_STEP_SUMMARY
 
