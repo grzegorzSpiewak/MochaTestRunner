@@ -1,6 +1,6 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-name: CI/CD
+name: CI/CD 
 run-name:  ${{ github.event.client_payload.service }}/${{ github.event.client_payload.commit }}
 on:
   repository_dispatch:
@@ -35,12 +35,13 @@ jobs:
       run: npm run test --env=qa --service=${{ github.event.client_payload.service }} --report
     
     - name: Publish test results
-      uses: phoenix-actions/test-reporting@v8
+      uses: phoenix-actions/test-reporting@f68b7c5fcffefd98dd230c686cca6c26683668c3
       if: success() || failure()
       id: test-report
       with: 
         path: './results/data.json'
         name: '${{ github.event.client_payload.service }}/${{ github.event.client_payload.commit }} - test results'
+        output-to: step-summary
         reporter: 'mocha-json'
         list-suites: 'all'
         list-tests: 'all'
