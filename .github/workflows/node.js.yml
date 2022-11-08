@@ -58,5 +58,5 @@ jobs:
         echo '' >> $GITHUB_STEP_SUMMARY
         echo '### Test results' >> $GITHUB_STEP_SUMMARY
         echo '' >> $GITHUB_STEP_SUMMARY
-        echo 'Available: ${{ github.server_url }}/${{ github.repository }}/runs/${{ github.run_id }}' >> $GITHUB_STEP_SUMMARY
+        echo 'Available: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}' >> $GITHUB_STEP_SUMMARY
 
