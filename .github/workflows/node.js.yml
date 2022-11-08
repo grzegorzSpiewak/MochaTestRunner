@@ -37,7 +37,6 @@ jobs:
     - name: Publish test results
       uses: phoenix-actions/test-reporting@f68b7c5fcffefd98dd230c686cca6c26683668c3
       if: success() || failure()
-      id: test-report
       with: 
         path: './results/data.json'
         name: '${{ github.event.client_payload.service }}/${{ github.event.client_payload.commit }} - test results'
@@ -46,16 +45,16 @@ jobs:
         list-suites: 'all'
         list-tests: 'all'
 
-    - name: Save state
-      run: |
-        echo "KEY=VALUE" >>$GITHUB_OUTPUT
-        echo "::remove-matcher owner=eslint-compact::"
-        echo "::remove-matcher owner=eslint-stylish::"
+    # - name: Save state
+    #   run: |
+    #     echo "KEY=VALUE" >>$GITHUB_OUTPUT
+    #     echo "::remove-matcher owner=eslint-compact::"
+    #     echo "::remove-matcher owner=eslint-stylish::"
     
-    - name: Test results
-      if: success() || failure()
-      run: |
-        echo '### Test results' >> $GITHUB_STEP_SUMMARY
-        echo '' >> $GITHUB_STEP_SUMMARY
-        echo 'Available: ${{ steps.test-report.outputs.runHtmlUrl }}' >> $GITHUB_STEP_SUMMARY
+    # - name: Test results
+    #   if: success() || failure()
+    #   run: |
+    #     echo '### Test results' >> $GITHUB_STEP_SUMMARY
+    #     echo '' >> $GITHUB_STEP_SUMMARY
+    #     echo 'Available: ${{ steps.test-report.outputs.runHtmlUrl }}' >> $GITHUB_STEP_SUMMARY
 
