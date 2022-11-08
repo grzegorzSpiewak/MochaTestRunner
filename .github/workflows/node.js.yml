@@ -52,11 +52,11 @@ jobs:
     #     echo "::remove-matcher owner=eslint-compact::"
     #     echo "::remove-matcher owner=eslint-stylish::"
     
-    - name: Test results
-      if: success() || failure()
-      run: |
-        echo '' >> $GITHUB_STEP_SUMMARY
-        echo '### Test results' >> $GITHUB_STEP_SUMMARY
-        echo '' >> $GITHUB_STEP_SUMMARY
-        echo 'Available: ${{ steps.test-report.outputs.runHtmlUrl }}' >> $GITHUB_STEP_SUMMARY
+    # - name: Test results
+    #   if: success() || failure()
+    #   run: |
+    #     echo '' >> $GITHUB_STEP_SUMMARY
+    #     echo '### Test results' >> $GITHUB_STEP_SUMMARY
+    #     echo '' >> $GITHUB_STEP_SUMMARY
+    #     echo 'Available: ${{ steps.test-report.outputs.runHtmlUrl }}' >> $GITHUB_STEP_SUMMARY
 
