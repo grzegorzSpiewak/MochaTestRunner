@@ -27,9 +27,6 @@ jobs:
         key: ${{ runner.os }}-node-v${{ matrix.node }}-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
          ${{ runner.os }}-node-v${{ matrix.node }}-
-    
-    - name: Save state
-      run: echo "KEY=VALUE" >>$GITHUB_OUTPUT
 
     - name: Install Dependencies
       run: npm install
@@ -47,6 +44,9 @@ jobs:
         reporter: 'mocha-json'
         list-suites: 'all'
         list-tests: 'all'
+
+    - name: Save state
+      run: echo "KEY=VALUE" >>$GITHUB_OUTPUT
     
     - name: Test results
       if: success() || failure()
