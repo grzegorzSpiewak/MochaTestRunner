@@ -44,6 +44,9 @@ jobs:
         list-suites: 'all'
         fail-on-error: false
     
-    - name: Adding markdown
-      run: echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
+    - name: Test results
+      run: |
+        echo '### Test results' >> $GITHUB_STEP_SUMMARY
+        echo '' >> $GITHUB_STEP_SUMMARY
+        echo 'Available: ' >> $GITHUB_STEP_SUMMARY
 
