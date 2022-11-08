@@ -35,7 +35,7 @@ jobs:
       run: npm run test --env=qa --service=${{ github.event.client_payload.service }} --report
     
     - name: Publish test results
-      uses: dorny/test-reporter@v1
+      uses: dorny/test-reporter@v1.6.0
       if: success() || failure()
       with: 
         path: './results/data.json'
