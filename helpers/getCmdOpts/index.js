@@ -30,7 +30,7 @@ module.exports = () => {
     logger.info('--region - region to run test on. example: us-east-1, us-west-2 - as default us-west-2 is passed');
     logger.info('--tag - to trigger only tagged test, example: smoke');
     logger.info('--trProjectName - name if project in Testrail to publish test');
-    logger.info('--trRunId - name if project in Testrail to publish test');
+    logger.info('--trRunId - run id in Testrail to publish test');
 
     return process.exit(1);
   }
