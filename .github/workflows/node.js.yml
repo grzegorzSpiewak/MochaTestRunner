@@ -42,7 +42,7 @@ jobs:
       if: success() || failure()
       id: test-report
       with: 
-        path: './results/data.json'
+        path: './results/index.json'
         name: '${{ github.event.client_payload.service }}/${{ github.event.client_payload.commit }} - test results'
         reporter: 'mocha-json'
         list-suites: 'all'
