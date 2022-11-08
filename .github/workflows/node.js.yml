@@ -36,6 +36,7 @@ jobs:
     
     - name: Publish test results
       uses: phoenix-actions/test-reporting@v8
+      id: test-report 
       if: success() || failure()
       with: 
         path: './results/*.json'
@@ -43,8 +44,8 @@ jobs:
         reporter: 'mocha-json'
         list-suites: 'all'
         fail-on-error: false
-
-    - name: Test details
-        run: |
-          echo "url is ${{ steps.test-report.outputs.runHtmlUrl }}"
+    
+    - name: Read output variables
+      run: |
+        echo "url is ${{ steps.test-report.outputs.runHtmlUrl }}"
 
