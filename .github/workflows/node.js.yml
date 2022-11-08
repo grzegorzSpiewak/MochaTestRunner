@@ -46,7 +46,7 @@ jobs:
         name: '${{ github.event.client_payload.service }}/${{ github.event.client_payload.commit }} - test results'
         reporter: 'mocha-json'
         list-suites: 'all'
-        fail-on-error: false
+        list-tests: 'all'
     
     - name: Test results
       run: |
