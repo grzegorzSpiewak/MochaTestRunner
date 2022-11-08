@@ -46,7 +46,10 @@ jobs:
         list-tests: 'all'
 
     - name: Save state
-      run: echo "KEY=VALUE" >>$GITHUB_OUTPUT
+      run: |
+        echo "KEY=VALUE" >>$GITHUB_OUTPUT
+        echo "::remove-matcher owner=eslint-compact::"
+        echo "::remove-matcher owner=eslint-stylish::"
     
     - name: Test results
       if: success() || failure()
