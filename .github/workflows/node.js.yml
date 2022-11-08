@@ -45,7 +45,10 @@ jobs:
         list-suites: 'all'
         fail-on-error: false
     
-    - name: Visit "url is ${{ steps.test-report.outputs.runHtmlUrl }}" to check results
+    - name: Adding markdown
+      run: echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
+    
+    - name: Visit "${{ steps.test-report.outputs.runHtmlUrl }}" to check results
       run: |
         echo "url is ${{ steps.test-report.outputs.runHtmlUrl }}"
 
