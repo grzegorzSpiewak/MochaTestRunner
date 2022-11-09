@@ -70,16 +70,14 @@ jobs:
         echo '' >> $GITHUB_STEP_SUMMARY
         echo 'Available: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}' >> $GITHUB_STEP_SUMMARY
     
-    # - name: Send email notification 
-    #   if: failure()
-    #   uses: dawidd6/action-send-mail@v3
-    #   with: 
-    #     server_address: smtp.gmail.com
-    #     server_port: 465
-    #     username: ${{ secrets.EMAIL_USERNAME }}
-    #     password: ${{ secrets.EMAIL_PASSWORD }}
-    #     subject: '${{ github.event.client_payload.service }} ver: ${{ github.event.client_payload.version }} - fails testing'
-    #     body: 'Report available: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
-    #     to: 
-    #     from: CI/CD test automation
+    - name: Send email notification 
+      if: failure()
+      uses: dawidd6/action-send-mail@v3
+      with: 
+        server_address: smtp.gmail.com
+        server_port: 465
+        subject: '${{ github.event.client_payload.service }} ver: ${{ github.event.client_payload.version }} - fails testing'
+        body: 'Report available: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+        to: greg.spiewak@fox.com
+        from: CI/CD test automation
 
