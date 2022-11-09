@@ -80,6 +80,6 @@ jobs:
         password: ${{ secrets.EMAIL_PASSWORD }}
         subject: '${{ github.event.client_payload.service }} ver: ${{ github.event.client_payload.version }} - fails testing'
         body: 'Report available: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
-        to: greg.spiewak@fox.com
+        to: greg.spiewak@x-team.com
         from: CI/CD test automation
 
