@@ -30,7 +30,7 @@ module.exports = () => {
     logger.warn('--dtab', 'dtab header used in production deployment to hit cold version of released code');
     logger.warn('--region', 'region to run test on. example: us-east-1, us-west-2 as default us-west-2 is passed');
     logger.warn('--tag', 'to trigger only tagged test, example: smoke');
-    logger.warn('--trProjectName', 'name if project in Testrail to publish test');
+    logger.warn('--trProjectName', 'name of project in Testrail to publish test');
     logger.warn('--trRunId', 'run id in Testrail to publish test');
 
     return process.exit(1);
