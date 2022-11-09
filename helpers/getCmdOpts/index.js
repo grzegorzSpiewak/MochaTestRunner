@@ -23,15 +23,15 @@ module.exports = () => {
   if (npm_config_info) {
     logger.warn('Following options can be passed as params:');
     logger.info('------------------------------------------');
-    logger.warn('--env', 'environment on which tests can be run on, example: DEV, QA, PROD', 'required');
-    logger.warn('--service', 'name of the folder in tests directory which includes test to be executed', 'required');
-    logger.warn('--file', 'name of test file to be executed');
-    logger.warn('--report', 'flag when passed triggers additional report default set to false');
-    logger.warn('--dtab', 'dtab header used in production deployment to hit cold version of released code');
-    logger.warn('--region', 'region to run test on. example: us-east-1, us-west-2 as default us-west-2 is passed');
-    logger.warn('--tag', 'to trigger only tagged test, example: smoke');
-    logger.warn('--trProjectName', 'name of project in Testrail to publish test');
-    logger.warn('--trRunId', 'run id in Testrail to publish test');
+    logger.ok('--env', 'environment on which tests can be run on, example: DEV, QA, PROD', 'required');
+    logger.ok('--service', 'name of the folder in tests directory which includes test to be executed', 'required');
+    logger.ok('--file', 'name of test file to be executed');
+    logger.ok('--report', 'flag when passed triggers additional report default set to false');
+    logger.ok('--dtab', 'dtab header used in production deployment to hit cold version of released code');
+    logger.ok('--region', 'region to run test on. example: us-east-1, us-west-2 as default us-west-2 is passed');
+    logger.ok('--tag', 'to trigger only tagged test, example: smoke');
+    logger.ok('--trProjectName', 'name of project in Testrail to publish test');
+    logger.ok('--trRunId', 'run id in Testrail to publish test');
 
     return process.exit(1);
   }
