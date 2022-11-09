@@ -1,11 +1,18 @@
 const logger = require('terminal-log');
+const read = require(('fs-readdir-recursive'));
 const { readdirSync, existsSync } = require('fs');
 const { isEmpty } = require('lodash');
 
 module.exports = ({ service, file }) => {
-  const files = [];
+  let files = [];
   const dir = 'execute/utils';
   const testDir = 'mocha-tests';
+
+  if (service === 'all') {
+    const validate = __dirname.replace(dir, `${testDir}`);
+    files = read(validate).map(path => `${testDir}/${path}`);
+    return files;
+  }
 
   const testPath = isEmpty(file) ? `${service}` : `${service}/${file}`;
   const validate = __dirname.replace(dir, `${testDir}/${testPath}`);
