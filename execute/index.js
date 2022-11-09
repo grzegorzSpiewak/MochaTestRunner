@@ -24,7 +24,7 @@ const opts = {
   ...taggedRun,
   ...withReport,
 };
-console.log(opts);
+
 const mochaMain = new Mocha(opts);
 
 try {
