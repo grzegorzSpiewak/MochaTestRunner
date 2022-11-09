@@ -53,9 +53,9 @@ jobs:
     #     echo "::remove-matcher owner=eslint-compact::"
     #     echo "::remove-matcher owner=eslint-stylish::"
 
-    - name: only on failure
-      if: failure()
-      run: echo test failed
+    # - name: only on failure
+    #   if: failure()
+    #   run: echo test failed
     
     - name: Test results
       if: success() || failure()
