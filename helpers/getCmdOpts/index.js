@@ -48,7 +48,7 @@ module.exports = () => {
     return process.exit(1);
   }
   
-  opts.env = npm_config_env || '';
+  opts.env = npm_config_env.toLowerCase() || '';
   opts.service = npm_config_service || '';
   opts.file = npm_config_file || '';
   opts.report = npm_config_report || false;
