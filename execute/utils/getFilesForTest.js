@@ -6,7 +6,7 @@ const { isEmpty } = require('lodash');
 module.exports = ({ service, file }) => {
   let files = [];
   const dir = 'execute/utils';
-  const testDir = 'mocha-tests';
+  const testDir = 'tests';
 
   if (service === 'all') {
     const validate = __dirname.replace(dir, `${testDir}`);

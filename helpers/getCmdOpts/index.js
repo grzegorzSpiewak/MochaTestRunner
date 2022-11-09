@@ -3,7 +3,7 @@ const logger = require('terminal-log');
 const { isEmpty } = require('lodash');
 
 const missingEnvErr = 'The -env param is required to execute tests. Example: DEV, QA, PROD';
-const testToExecuteErr = 'The -service param is required to execute tests. Please provide name of folder in mocha-tests directory to execute test.';
+const testToExecuteErr = 'The -service param is required to execute tests. Please provide name of folder in tests directory to execute test.';
 
 // Parses all params which are passed by command line
 module.exports = () => {
@@ -24,7 +24,7 @@ module.exports = () => {
     logger.warn('Following options can be passed as params:');
     logger.info('------------------------------------------');
     logger.warn('--env', 'environment on which tests can be run on, example: DEV, QA, PROD', 'required');
-    logger.warn('--service', 'name of the folder in mocha-tests directory which includes test to be executed', 'required');
+    logger.warn('--service', 'name of the folder in tests directory which includes test to be executed', 'required');
     logger.warn('--file', 'name of test file to be executed');
     logger.warn('--report', 'flag when passed triggers additional report default set to false');
     logger.warn('--dtab', 'dtab header used in production deployment to hit cold version of released code');
