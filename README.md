@@ -1,6 +1,5 @@
-# Sps-services-test-automation
-
-This repository is meant to act as the source of end-to-end and integration test that validates the behavior of a Spark Platform Services's. The tests are currently written in Node using Mocha as a test runner.
+# Mocha test runner
+The tests are currently written in Node using Mocha as a test runner.
 
 ## Install Dependencies
 
